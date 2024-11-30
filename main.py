@@ -10,9 +10,12 @@ from selenium.webdriver.common.keys import Keys
 from discord.ext import commands
 from discord import app_commands
 
+# Option to add the bot token
+BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"  # You can also use an environment variable here
+
 def log_account_details(username, password, success, message):
     log_message = f"Username: {username}, Password: {password}, Success: {success}, Message: {message}\n"
-
+    
     with open("account_log.txt", "a") as log_file:
         log_file.write(log_message)
 
@@ -155,3 +158,6 @@ async def login_command(interaction: discord.Interaction, username: str, passwor
         await interaction.followup.send(f"✅ {message}")
     else:
         await interaction.followup.send(f"❌ {message}")
+
+# Start the bot with the token
+bot.run(MTMwNzQzMzc1OTgyOTc4NjYyNQ.GBMPV6.OkH8XEVTyY32FXhctucsNpucOOtW1rzbOEzhjY)
